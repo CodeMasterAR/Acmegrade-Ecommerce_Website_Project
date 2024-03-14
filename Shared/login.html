@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ShopGlamor - Admin Login</title>
+
+        <!-- CSS -->
+        <!--         <link rel="stylesheet" href="../partials/_loginpageCSS.css"> -->
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/f6be398f37.js" crossorigin="anonymous"></script>
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Poppins', sans-serif;
+            }
+
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .signin-signup {
+                width: 100%;
+                max-width: 300px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .form-container {
+                position: relative;
+                width: 100%;
+                height: 370px;
+                overflow: hidden;
+            }
+
+            .form-container form {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                transition: transform 0.6s ease-in-out;
+            }
+
+            #log {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #reg {
+                left: 300px;
+            }
+
+            .title {
+                width: 100%;
+                height: 40px;
+                display: flex;
+                margin-bottom: 20px;
+            }
+
+            .title span {
+                position: relative;
+                font-size: 20px;
+                text-align: center;
+                width: 50%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #777;
+                cursor: pointer;
+            }
+
+            .title span h3 {
+                cursor: pointer;
+            }
+
+            .title span:nth-child(1) {
+                border-right: 1px solid #ccc;
+            }
+
+            .input-field {
+                width: 100%;
+                height: 40px;
+                background: #eee;
+                border-radius: 40px;
+                margin: 10px 0;
+                display: grid;
+                grid-template-columns: 15% 85%;
+            }
+
+            .input-field i {
+                text-align: center;
+                line-height: 40px;
+                color: #8a8a8a;
+                padding-left: 5px;
+            }
+
+            .input-field input {
+                font-weight: 400;
+                font-size: 16px;
+                border: none;
+                outline: none;
+                background: transparent;
+                color: #555;
+                padding: 0 10px;
+            }
+
+            #login-pass {
+                cursor: pointer;
+            }
+
+            #signup-pass {
+                cursor: pointer;
+            }
+
+            .condition {
+                margin: 10px 0;
+                font-size: 10px;
+                text-align: center;
+            }
+
+            .remember {
+                margin: 10px 0;
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+                color: #777;
+            }
+
+            .remember label {
+                margin-left: 10px;
+            }
+
+            .submit-btn {
+                width: 100%;
+                height: 40px;
+                background: #2092d3;
+                border-radius: 40px;
+            }
+
+            .submit-btn button {
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                outline: none;
+                border: none;
+                color: #fff;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+
+            .forgot-pw {
+                margin-top: 10px;
+                text-align: center;
+                font-size: 14px;
+            }
+
+            .forgot-pw a {
+                text-decoration: none;
+                color: #777;
+            }
+
+            .forgot-pw a:hover {
+                text-decoration: underline;
+            }
+
+            .ask-sign {
+                margin-top: 10px;
+                text-align: center;
+                font-size: 14px;
+                color: #777;
+            }
+
+            .ask-sign p a {
+                text-decoration: none;
+                color: #777;
+            }
+
+            .ask-sign p a:hover {
+                text-decoration: underline;
+            }
+
+            .active {
+                position: relative;
+                pointer-events: none;
+            }
+
+            .active::after {
+                content: '';
+                position: absolute;
+                background: #2092d3;
+                border-radius: 3px;
+                bottom: -6px;
+                height: 4px;
+                left: 50%;
+                transform: translateX(-50%);
+                animation: move 0.5s linear forwards;
+            }
+
+            .dropdown {
+                position: relative;
+                width: 100%;
+                height: 40px;
+                background: #eee;
+                border-radius: 40px;
+                margin: 10px 0;
+                display: grid;
+                grid-template-columns: 15% 85%;
+            }
+
+            .dropdown i {
+                text-align: center;
+                line-height: 40px;
+                color: #8a8a8a;
+                padding-left: 5px;
+                cursor: pointer;
+            }
+
+            .dropdown input {
+                font-weight: 400;
+                font-size: 16px;
+                border: none;
+                outline: none;
+                background: transparent;
+                padding: 0 10px;
+                cursor: pointer;
+                color: #555;
+            }
+
+            .select-box {
+                position: absolute;
+                width: 100%;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                top: 50px;
+                overflow: hidden;
+                max-height: 0;
+                transition: max-height 0.3s linear;
+            }
+
+            .select-box .option {
+                width: 100%;
+                height: 30px;
+                background: #eee;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #8a8a8a;
+                cursor: pointer;
+            }
+
+            .select-box .option:hover {
+                background: #ddd;
+                color: #555;
+            }
+
+            .show-menu {
+                max-height: 90px;
+                border: 1px solid #ccc;
+                box-shadow: 0 0 10px #ccc;
+            }
+
+            @keyframes move {
+                0% {
+                    width: 0;
+                }
+
+                25% {
+                    width: 25%;
+                }
+
+                50% {
+                    width: 50%;
+                }
+
+                75% {
+                    width: 75%;
+                }
+
+                100% {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="signin-signup">
+                <div class="title">
+                    <span id="login-link1">
+                        <h3 class="active" id="login">Log in</h3>
+                    </span>
+                    <span id="signup-link1">
+                        <h3 id="signup">Sign up</h3>
+                    </span>
+                </div>
+                <div class="form-container">
+                    <form action="../Shared/login.php" id="log" method="post">
+                        <div class="input-field">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" name="email" id="login-email" placeholder="Email" required>
+                        </div>
+                        <div class="input-field">
+                            <i class="fa-solid fa-lock" id="login-pass"></i>
+                            <input type="password" name="password" id="login-password" placeholder="Password" required>
+                        </div>
+                        <div class="remember">
+                            <input type="checkbox" name="remember" id="remember">
+                            <label for="remember">Remember me?</label>
+                        </div>
+                        <div class="submit-btn">
+                            <button type="submit">Login</button>
+                        </div>
+                        <div class="forgot-pw">
+                            <a href="forgot.php">Forgot Password?</a>
+                        </div>
+                        <div class="ask-sign">
+                            <p>Don't have an account? <a href="#" id="signup-link2">sign up</a></p>
+                        </div>
+                    </form>
+                    <form action="../Shared/register.php" id="reg" onsubmit="return velidate()" method="post">
+                        <div class="input-field">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" name="email" id="signup-email" placeholder="Email" required>
+                        </div>
+                        <div class="input-field">
+                            <i class="fa-solid fa-lock" id="signup-pass"></i>
+                            <input type="password" name="password" id="signup-password" placeholder="Password" required>
+                        </div>
+                        <div class="condition" id="condition">
+                        </div>
+                        <div class="input-field">
+                            <i class="fa-solid fa-check" id="confirm"></i>
+                            <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password"
+                                required>
+                        </div>
+                        <div class="input-field">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="text" name="mobile" id="mobile" placeholder="Mobile Number" required
+                                length="10">
+                        </div>
+                        <div class="dropdown">
+                            <i class="fa-solid fa-chevron-up" id="up-down"></i>
+                            <input type="text" name="usertype" id="dropdown" placeholder="User Category" readonly
+                                required>
+                            <div class="select-box" id="menu">
+                                <div class="option" onclick="type('Admin')">Admin</div>
+                                <div class="option" onclick="type('Customer')">Customer</div>
+                                <div class="option" onclick="type('Vendor')">Vendor</div>
+                            </div>
+                        </div>
+                        <div class="submit-btn">
+                            <button type="submit">Sign up</button>
+                        </div>
+                        <div class="ask-sign">
+                            <p>Already have an account? <a href="#" id="login-link2">Login</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Promises -->
+        <!-- Password Checker promise -->
+        <!-- Password Matching promise-->
+        <script>
+            // Password Conditions:
+            // Global variables:
+            const basic_condition = 'Must have 3 or more characters, at least contain one number and one special character.';
+            const condition1 = 'Must contain at least one number.';
+            const condition2 = 'Must contain at least one special character in the set \'!@#$%^&*\'.';
+            const condition3 = 'Must contain at least one letter.';
+            const condition4 = 'Don\'t use space.';
+            const success = 'Congratulation!!! Your password is strong.'
+
+            // ----------------------------------------------
+            // -------Promise for password checking:---------
+            // ----------------------------------------------
+            const passwordChecker = (password) => {
+                return new Promise((resolve, reject) => {
+                    if (password.length < 3) {
+                        reject(basic_condition);
+                    } else if (/\s/.test(password)) {
+                        reject(condition4);
+                    } else if (!/[0-9]/.test(password)) {
+                        reject(condition1);
+                    } else if (!/[!@#$%^&*]/.test(password)) {
+                        reject(condition2);
+                    } else if (!/[a-zA-Z]/.test(password)) {
+                        reject(condition3);
+                    } else {
+                        resolve(success);
+                    }
+                })
+            }
+
+            // ----------------------------------------------
+            // ----Promise for matching confirm password:----
+            // ----------------------------------------------
+            const confirmPassword = (password, confirm_password, condition) => {
+                return new Promise((resolve, reject) => {
+                    if (password === '' || confirm_password === '') reject('#8a8a8a');
+                    else if (password !== confirm_password) reject('#8a8a8a');
+                    else if ((password === confirm_password) && condition !== success) reject('red');
+                    else resolve('#30aa00');
+                })
+            }
+        </script>
+
+        <!-- Event Listener -->
+        <!-- Password Input Field -->
+        <!-- Confirm pass word -->
+        <!-- lock unlock -->
+        <script>
+            // ----------------------------------------------
+            // --------Event Listeners - input field:--------
+            // ----------------------------------------------
+            const checkPassword = (Id, condition) => {
+                const pass = document.getElementById(Id);
+                const condi = document.getElementById(condition);
+                pass.addEventListener('input', () => {
+                    passwordChecker(pass.value)
+                        .then((result) => {
+                            condi.style.display = 'block';
+                            condi.innerHTML = result;
+                            condi.style.color = 'green';
+                        })
+                        .catch((error) => {
+                            condi.style.display = 'block';
+                            condi.innerHTML = error;
+                            condi.style.color = 'red';
+                        })
+                })
+
+                pass.addEventListener('focusout', () => {
+                    condi.style.display = 'none';
+                });
+            }
+
+            // ----------------------------------------------
+            // --------Event Listeners - confirm field:------
+            // ----------------------------------------------
+            const checkConfirmPassword = (password, cpassword, condition, symbol) => {
+                const pass = document.getElementById(password);
+                const confirm = document.getElementById(cpassword);
+                const condi = document.getElementById(condition);
+                const check = document.getElementById(symbol);
+
+                pass.addEventListener('input', () => {
+                    confirmPassword(pass.value, confirm.value, condi.innerHTML)
+                        .then((result) => {
+                            check.classList.add('fa-check');
+                            check.classList.remove('fa-times');
+                            check.style.color = result;
+                        })
+                        .catch((error) => {
+                            if (error === '#8a8a8a') { check.classList.add('fa-check'); check.classList.remove('fa-times'); check.style.color = error; }
+                            else { check.classList.remove('fa-check'); check.classList.add('fa-times'); check.style.color = error; }
+                        })
+                })
+
+                confirm.addEventListener('input', () => {
+                    confirmPassword(pass.value, confirm.value, condi.innerHTML)
+                        .then((result) => {
+                            check.classList.add('fa-check');
+                            check.classList.remove('fa-times');
+                            check.style.color = result;
+                        })
+                        .catch((error) => {
+                            if (error === '#8a8a8a') { check.classList.add('fa-check'); check.classList.remove('fa-times'); check.style.color = error; }
+                            else { check.classList.remove('fa-check'); check.classList.add('fa-times'); check.style.color = error; }
+                        })
+                })
+            }
+
+            // ----------------------------------------------
+            // --------Event Listeners - lock icon:----------
+            // ----------------------------------------------
+            const checkLock = (password, symbol) => {
+                const pass = document.getElementById(password);
+                const lock = document.getElementById(symbol);
+                lock.addEventListener('click', () => {
+                    if (pass.type === 'password') { pass.type = 'text'; lock.classList.remove('fa-lock'); lock.classList.add('fa-unlock-alt') }
+                    else { pass.type = 'password'; lock.classList.remove('fa-unlock-alt'); lock.classList.add('fa-lock') }
+                })
+            }
+
+            // ----------------------------------------------
+            // ------------ Event Drop down Menu ------------
+            // ----------------------------------------------
+
+        </script>
+
+        <!-- Form Functionality -->
+        <script>
+            const login_btn = document.getElementById('login-link1');
+            const register_btn = document.getElementById('signup-link1');
+            const login_link = document.getElementById('login-link2');
+            const register_link = document.getElementById('signup-link2');
+            const logform = document.getElementById('log');
+            const regform = document.getElementById('reg');
+            const log = document.getElementById('login');
+            const reg = document.getElementById('signup');
+
+            register_btn.addEventListener('click', () => {
+                log.classList.remove('active');
+                reg.classList.add('active');
+                logform.style.transform = 'translateX(-300px)';
+                regform.style.transform = 'translateX(-300px)';
+            })
+            register_link.addEventListener('click', () => {
+                log.classList.remove('active');
+                reg.classList.add('active');
+                logform.style.transform = 'translateX(-300px)';
+                regform.style.transform = 'translateX(-300px)';
+            })
+            login_btn.addEventListener('click', () => {
+                log.classList.add('active');
+                reg.classList.remove('active');
+                logform.style.transform = 'translateX(0)';
+                regform.style.transform = 'translateX(0)';
+            })
+            login_link.addEventListener('click', () => {
+                log.classList.add('active');
+                reg.classList.remove('active');
+                logform.style.transform = 'translateX(0)';
+                regform.style.transform = 'translateX(0)';
+            })
+        </script>
+
+        <!-- Call the Functions -->
+        <script>
+            checkPassword('signup-password', 'condition');
+            checkConfirmPassword('signup-password', 'cpassword', 'condition', 'confirm');
+            checkLock('login-password', 'login-pass');
+            checkLock('signup-password', 'signup-pass');
+            formFunctionality('login-link1', 'signup-link1', 'log', 'reg', 0);
+            formFunctionality('login-link2', 'signup-link2', 'log', 'reg', 0);
+        </script>
+
+        <!-- Drop down menu -->
+        <script>
+            const up_down = document.querySelector('#up-down');
+            const menu = document.querySelector('#menu');
+            const dropdown = document.querySelector('#dropdown');
+            const type = (value) => {
+                document.querySelector('#dropdown').value = value;
+                menu.classList.toggle('show-menu');
+                up_down.classList.toggle('fa-chevron-up');
+                up_down.classList.toggle('fa-chevron-down');
+            }
+            up_down.addEventListener('click', () => {
+                menu.classList.toggle('show-menu');
+                up_down.classList.toggle('fa-chevron-up');
+                up_down.classList.toggle('fa-chevron-down');
+            })
+            dropdown.addEventListener('click', () => {
+                menu.classList.toggle('show-menu');
+                up_down.classList.toggle('fa-chevron-up');
+                up_down.classList.toggle('fa-chevron-down');
+            })
+        </script>
+
+        <!-- Form Validate -->
+        <script>
+            const validate = () => {
+                const password = document.getElementById('signup-password');
+                const confirm_password = document.getElementById('cpassword');
+                if (password.value !== confirm_password.value) {
+                    alert('Password does not match');
+                    return false;
+                }
+                return true;
+            }
+        </script>
+
+    </body>
+
+</html>

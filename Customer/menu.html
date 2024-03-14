@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+
+        <script src="https://kit.fontawesome.com/f6be398f37.js" crossorigin="anonymous"></script>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: #f3f3f3;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* --------------------------------- */
+            /* --------- Navigation Bar -------- */
+            /* --------------------------------- */
+
+            .navbar-container {
+                width: 100%;
+                height: 50px;
+                padding: 0 3%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #2292d3;
+                position: fixed;
+                top: 0;
+                z-index: 50;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            }
+
+            .left-panel,
+            .right-panel {
+                height: 100%;
+            }
+
+            /* ---------------------------------------------- */
+            /* Left Panel contain Website icon and Search box */
+            /* ---------------------------------------------- */
+
+            .left-panel {
+                min-width: 350px;
+                width: 70vw;
+                display: flex;
+            }
+
+            .logo,
+            .search,
+            .icons {
+                height: 100%;
+            }
+
+            .logo {
+                width: 150px;
+                flex-shrink: 0;
+                cursor: pointer;
+            }
+
+            .search {
+                width: 55%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .icons {
+                min-width: 180px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .logo a {
+                width: 98%;
+                height: 100%;
+            }
+
+            .logo a img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .search .search-input {
+                width: 98%;
+                height: 2rem;
+                color: #555;
+                display: grid;
+                grid-template-columns: 95% 5%;
+                background: #fff;
+                border-radius: 5px;
+                overflow: hidden;
+                padding: 0 5px;
+            }
+
+            .search-input input {
+                border: none;
+                outline: none;
+            }
+
+            .search-input i {
+                line-height: 2rem;
+                cursor: pointer;
+            }
+
+            /* --------------------------------------------------------- */
+            /* Right Panel contain Cart, Wishlisr, and User Profile logo */
+            /* --------------------------------------------------------- */
+
+            .right-panel {
+                min-width: 120px;
+                width: 30vw;
+                display: flex;
+                justify-content: flex-end;
+                flex-shrink: 20;
+            }
+
+            .icons .icon {
+                position: relative;
+                width: 33.33%;
+                height: 70%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            .icon a {
+                height: 100%;
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                color: #fff;
+                font-size: 1.3rem;
+                cursor: pointer;
+            }
+
+            .icon a:hover {
+                color: #fff;
+            }
+
+            .icon .user {
+                height: 2em;
+                width: 2em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                background: #fff;
+                cursor: pointer;
+            }
+
+            .user i {
+                line-height: 50%;
+                color: #2292d3;
+            }
+
+            /* -------------------------------- */
+            /* User Profile Dropdown Menu Style */
+            /* -------------------------------- */
+            .u-detail {
+                position: fixed;
+                top: 55px;
+                right: 3%;
+                width: 200px;
+                overflow: hidden;
+                max-height: 0;
+                transition: all 0.5s linear;
+            }
+
+            .u-detail .option {
+                width: 100%;
+                height: 45px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #fff;
+                border-bottom: 0.5px solid #d8d8d8;
+            }
+
+            .u-detail .option a {
+                width: 70%;
+                height: 100%;
+                text-decoration: none;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                font-size: 1em;
+                color: #777;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .u-detail .option a .edit-detail {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            .edit-detail h5 {
+                width: 100%;
+                height: 50%;
+                font-size: 0.8em;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                margin: 0;
+            }
+
+            .edit-detail p {
+                width: 100%;
+                height: 50%;
+                font-size: 0.6em;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                margin: 0;
+            }
+
+            .u-detail .option:hover {
+                background: #2292d3;
+
+                & a {
+                    color: #fff;
+                    transform: scale(1.1);
+                }
+            }
+
+            .u-detail .option:last-child {
+                border-bottom: none;
+            }
+
+            .u-detail.active-user-detail {
+                max-height: 225px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- navbar & Category -->
+        <div class="navbar-container">
+            <div class="left-panel">
+                <div class="logo">
+                    <a href="home.php">
+                        <img src="images/logo-no-background.svg" alt="">
+                    </a>
+                </div>
+                <div class="search">
+                    <div class="search-input">
+                        <input type="text" placeholder="Search for products, brands and more" id="search">
+                        <i class="fa-solid fa-search"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="right-panel">
+                <div class="icons">
+                    <div class="icon">
+                        <a href="viewcart.php">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </div>
+                    <div class="icon">
+                        <a href="viewWishlist.php">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                    </div>
+                    <div class="icon">
+                        <div class="user">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="u-detail">
+                            <div class="option">
+                                <a href="customer_detail.php?location=home.php">
+                                    <i class="fa-solid fa-user-pen"></i>&nbsp;&nbsp;
+                                    <div class="edit-detail">
+                                        <h5>Your Profile</h5>
+                                        <p>View and Edit Profile</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="option">
+                                <a href="viewcart.php">
+                                    <i class="fa-solid fa-cart-shopping"></i>&nbsp;&nbsp;
+                                    Your Cart
+                                </a>
+                            </div>
+                            <div class="option">
+                                <a href="viewWishlist.php">
+                                    <i class="fa-solid fa-heart"></i>&nbsp;&nbsp;
+                                    Your Wishlist
+                                </a>
+                            </div>
+                            <div class="option">
+                                <a href="viewOrders.php">
+                                    <i class="fa-brands fa-shopify"></i>&nbsp;&nbsp;
+                                    Your Orders
+                                </a>
+                            </div>
+                            <div class="option">
+                                <a href="../Shared/logout.php">
+                                    <i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp;
+                                    Logout
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const user = document.querySelector(".user");
+            var dropdown = document.querySelector(".u-detail");
+            user.addEventListener("click", () => {
+                dropdown.classList.toggle("active-user-detail");
+            });
+
+            const search = document.querySelector('#search');
+            search.addEventListener('change', () => {
+                window.location.href = `home.php?search=${search.value}`;
+            })
+        </script>
+    </body>
+
+</html>

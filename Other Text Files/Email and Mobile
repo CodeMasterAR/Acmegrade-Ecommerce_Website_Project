@@ -1,0 +1,491 @@
+==================================
+============ Vendors =============
+==================================
+1.----------------------------------------------------
+amit.kumar@gmail.com
+9876543210
+Fashion Frenzy - Category: Fashion
+Shop 1:
+State: Maharashtra
+District: Mumbai
+City: Mumbai
+Pincode: 400001
+Area: Shop No. 101, Causeway Road, Colaba
+
+
+
+2.----------------------------------------------------
+priya.sharma@gmail.com
+8765432109
+Comfort Homes - Category: Furniture
+Shop 2:
+State: Delhi
+District: South Delhi
+City: New Delhi
+Pincode: 110001
+Area:  Shop No. 25, Janpath Market, Connaught Place
+
+
+3.----------------------------------------------------
+rahul.verma@gmail.com
+7890123456
+Book Haven - Category: Books
+Shop 3:
+State: Tamil Nadu
+District: Chennai
+City: Chennai
+Pincode: 600001
+Area: Shop No. 7A, NSC Bose Road, Parrys Corner 
+
+
+4.----------------------------------------------------
+neha.singh@gmail.com
+9012345678
+ElectroTech - Category: Electronics
+Shop 4:
+State: West Bengal
+District: Kolkata
+City: Kolkata
+Pincode: 700001
+Area: Shop No. 12, Lenin SaraniEsplanade
+
+
+5.----------------------------------------------------
+mohit.gupta@gmail.com
+8901234567
+Active Athletes - Category: Sports & Fitness
+Shop 5:
+State: Karnataka
+District: Bangalore Urban
+City: Bangalore
+Pincode: 560001
+Area: Shop No. 8, Brigade Road , MG Road
+
+
+6.----------------------------------------------------
+ananya.patel@gmail.com
+7654321098
+Fresh Mart - Category: Grocery
+Shop 6:
+State: Uttar Pradesh
+District: Lucknow
+City: Lucknow
+Pincode: 226001
+Area: Shop No. 16B, MG Marg, Hazratganj
+
+
+7.----------------------------------------------------
+vikram.yadav@gmail.com
+8765430987
+HomeTech Hub - Category: Home Appliances
+Shop 7:
+State: Punjab
+District: Amritsar
+City: Amritsar
+Pincode: 143001
+Area: Shop No. 3, Chowk Passian, Golden Temple Road
+
+
+8.----------------------------------------------------
+sneha.mishra@gmail.com
+7890127654
+ToyLandia - Category: Toys & Games
+Shop 8:
+State: Rajasthan
+District: Jaipur
+City: Jaipur
+Pincode: 302001
+Area: Shop No. 21, Panch Batti, MI Road
+
+
+9.----------------------------------------------------
+amrita.joshi@gmail.com
+9012354321
+StyleSpot - Category: Fashion
+Shop 9:
+State: Kerala
+District: Thiruvananthapuram
+City: Thiruvananthapuram
+Pincode: 695001
+Area: Shop No. 11A, Chalai Market, MG Road
+
+
+10.----------------------------------------------------
+sumit.chopra@gmail.com
+8901265432
+Fitness World - Category: Sports & Fitness
+Shop 10:
+State: Gujarat
+District: Ahmedabad
+City: Ahmedabad
+Pincode: 380001
+Area: Shop No. 5, Manek Chowk, Lal Darwaja
+
+==================================
+============ Customers ===========
+==================================
+
+1.
+-----------------------------------------
+nisha.shah@gmail.com
+7654312345
+comment: "I absolutely love this product! It exceeded my expectations."
+Customer 1:
+State: Maharashtra
+District: Mumbai
+City: Mumbai
+Pincode: 400001
+Area: Flat No. 101, Shanti Apartments, Causeway Road, Colaba
+
+2.
+----------------------------------------
+ravi.kumar@gmail.com
+8765498765
+comment: "Great quality and value for money. Highly recommended!"
+Customer 6:
+State: Uttar Pradesh
+District: Lucknow
+City: Lucknow
+Pincode: 226001
+Area: House No. 16B, Tulsi Apartments, MG Marg, Hazratganj
+
+3.
+---------------------------------------
+riya.pandey@gmail.com
+7890187654
+comment: "This product has become a game-changer for me. So happy with my purchase!"
+Customer 5:
+State: Karnataka
+District: Bangalore Urban
+City: Bangalore
+Pincode: 560001
+Area: Block A, 3rd Floor, Brigade Road, MG Road
+
+4.
+---------------------------------------
+vishal.singh@gmail.com
+9012376543
+comment: "Best purchase ever! I can't stop raving about it to my friends and family."
+Customer 4:
+State: West Bengal
+District: Kolkata
+City: Kolkata
+Pincode: 700001
+Area: Shop No. 12, Metro Plaza, Lenin Sarani, Esplanade
+
+5.
+--------------------------------------
+meera.sharma@gmail.com
+8901265432
+comment: "This product is a total winner! I wish I had bought it sooner."
+Customer 3:
+State: Tamil Nadu
+District: Chennai
+City: Chennai
+Pincode: 600001
+Area: Apartment No. 7A, Royal Towers, NSC Bose Road, Parrys Corner
+
+
+6.
+--------------------------------------
+jatin.mahajan@gmail.com
+9012365432
+comment: "I'm thoroughly impressed by the design and functionality of this product."
+State: Maharashtra, 
+District: Mumbai Suburban, 
+City: Mumbai, 
+Pincode: 400049, 
+Area: Flat 301, Paradise Heights, Juhu Road, Juhu.
+
+7.
+--------------------------------------
+pooja.malhotra@gmail.com
+8765443210
+comment: "The customer service was excellent, and the product arrived on time."
+State: Tamil Nadu, 
+District: Chennai, 
+City: Chennai, 
+Pincode: 600028, 
+Area: No. 15, Green Avenue, T. Nagar.
+
+8.
+--------------------------------------
+karan.singh@gmail.com
+7654354321
+comment: "I highly recommend this product to anyone in need. It's worth every penny."
+State: Karnataka, 
+District: Bengaluru Urban, 
+City: Bengaluru, 
+Pincode: 560001, 
+Area: House No. 25, Silicon Meadows, MG Road.
+
+9.
+--------------------------------------
+sanya.das@gmail.com
+8901254321
+comment: "I can't get enough of this product. It's now a must-have in my daily routine."
+State: Rajasthan, 
+District: Jaipur, 
+City: Jaipur, 
+Pincode: 302001, 
+Area: Bungalow 10, Royal Enclave, Civil Lines.
+
+10.
+---------------------------------------
+rohit.verma@gmail.com
+7890132109
+comment: "Impressive performance and durability. I'm a satisfied customer."
+State: Kerala, 
+District: Ernakulam, 
+City: Kochi, 
+Pincode: 682011, 
+Area: Apartment 501, Palm Residency, Marine Drive.
+
+
+11.
+---------------------------------------
+Name: Aarav Kumar
+Email: aarav.kumar@gmail.com
+Mobile No: 9876543210
+Comment: "Impressive product! Loving it."
+State: Maharashtra
+District: Mumbai
+City: Mumbai
+Pincode: 400001
+Area: Flat 101, Sea View Apartments, Marine Drive.
+
+12.
+----------------------------------------
+Name: Riya Verma
+Email: riya.verma@gmail.com
+Mobile No: 8765432109
+Comment: "Great service and fast delivery."
+State: Karnataka
+District: Bengaluru Urban
+City: Bengaluru
+Pincode: 560001
+Area: House No. 25, Green Valley, MG Road.
+
+13.
+-----------------------------------------
+Name: Arjun Singhania
+Email: arjun.singhania@gmail.com
+Mobile No: 7654321098
+Comment: "Absolutely satisfied with my purchase."
+State: Delhi
+District: New Delhi
+City: New Delhi
+Pincode: 110001
+Area: Apartment 301, Sky Towers, Connaught Place.
+
+14.
+-----------------------------------------
+Name: Nisha Patel
+Email: nisha.patel@gmail.com
+Mobile No: 6543210987
+Comment: "The product quality is top-notch."
+State: Uttar Pradesh
+District: Lucknow
+City: Lucknow
+Pincode: 226001
+Area: House No. 10, Rosewood Enclave, Gomti Nagar.
+
+15.
+-----------------------------------------
+Name: Rajesh Sharma
+Email: rajesh.sharma@gmail.com
+Mobile No: 5432109876
+Comment: "Best shopping experience ever!"
+State: Gujarat
+District: Ahmedabad
+City: Ahmedabad
+Pincode: 380001
+Area: Bungalow 5, Hill View Society, Navrangpura.
+
+16.
+-----------------------------------------
+Name: Sanya Mishra
+Email: sanya.mishra@gmail.com
+Mobile No: 4321098765
+Comment: "Highly recommend this product."
+State: West Bengal
+District: Kolkata
+City: Kolkata
+Pincode: 700001
+Area: Flat 501, Riverside Residency, Park Street.
+
+17.
+-----------------------------------------
+Name: Siddharth Reddy
+Email: siddharth.reddy@gmail.com
+Mobile No: 3210987654
+Comment: "The product exceeded my expectations."
+State: Telangana
+District: Hyderabad
+City: Hyderabad
+Pincode: 500001
+Area: House No. 15, Royal Enclave, Banjara Hills.
+
+18.
+-----------------------------------------
+Name: Kavya Singh
+Email: kavya.singh@gmail.com
+Mobile No: 2109876543
+Comment: "Superb customer support!"
+State: Rajasthan
+District: Jaipur
+City: Jaipur
+Pincode: 302001
+Area: Apartment 202, Jewel Heights, MI Road.
+
+19.
+-----------------------------------------
+Name: Vishal Gupta
+Email: vishal.gupta@gmail.com
+Mobile No: 1098765432
+Comment: "Amazing product at a great price."
+State: Haryana
+District: Gurugram
+City: Gurugram
+Pincode: 122001
+Area: House No. 8, Silver Springs, DLF Phase 1.
+
+20.
+-----------------------------------------
+Name: Aisha Khan
+Email: aisha.khan@gmail.com
+Mobile No: 9876543210
+Comment: "Fast and reliable shipping."
+State: Tamil Nadu
+District: Chennai
+City: Chennai
+Pincode: 600001
+Area: Flat 401, Emerald Towers, Anna Salai.
+
+21.
+-----------------------------------------
+Name: Rohan Yadav
+Email: rohan.yadav@gmail.com
+Mobile No: 8765432109
+Comment: "Highly satisfied with the purchase."
+State: Madhya Pradesh
+District: Bhopal
+City: Bhopal
+Pincode: 462001
+Area: House No. 20, Royal Garden, TT Nagar.
+
+22.
+-----------------------------------------
+Name: Alisha Menon
+Email: alisha.menon@gmail.com
+Mobile No: 7654321098
+Comment: "Excellent quality and value for money."
+State: Kerala
+District: Kochi
+City: Kochi
+Pincode: 682001
+Area: Apartment 601, Pearl Residency, Marine Drive.
+
+23.
+-----------------------------------------
+Name: Rishi Shah
+Email: rishi.shah@gmail.com
+Mobile No: 6543210987
+Comment: "Great shopping experience overall."
+State: Uttar Pradesh
+District: Kanpur
+City: Kanpur
+Pincode: 208001
+Area: House No. 12, Silver Sands, Mall Road.
+
+24.
+-----------------------------------------
+Name: Kirti Desai
+Email: kirti.desai@gmail.com
+Mobile No: 5432109876
+Comment: "The product arrived on time and in perfect condition."
+State: Gujarat
+District: Surat
+City: Surat
+Pincode: 395001
+Area: Bungalow 30, Green Meadows, Athwalines.
+
+25.
+-----------------------------------------
+Name: Vikram Singh
+Email: vikram.singh@gmail.com
+Mobile No: 4321098765
+Comment: "Very happy with my purchase."
+State: Bihar
+District: Patna
+City: Patna
+Pincode: 800001
+Area: Flat 301, River View Apartments, Fraser Road.
+
+26.
+-----------------------------------------
+Name: Nandini Sahu
+Email: nandini.sahu@gmail.com
+Mobile No: 3210987654
+Comment: "Product quality is excellent."
+State: Odisha
+District: Bhubaneswar
+City: Bhubaneswar
+Pincode: 751001
+Area: House No. 9, Forest Avenue, Janpath.
+
+27.
+-----------------------------------------
+Name: Sameer Khan
+Email: sameer.khan@gmail.com
+Mobile No: 2109876543
+Comment: "Extremely satisfied with the purchase."
+State: Telangana
+District: Hyderabad
+City: Hyderabad
+Pincode: 500001
+Area: Apartment 501, Paradise Residency, Banjara Hills.
+
+28.
+-----------------------------------------
+Name: Reena Sharma
+Email: reena.sharma@gmail.com
+Mobile No: 1098765432
+Comment: "Wonderful customer support!"
+State: Jharkhand
+District: Ranchi
+City: Ranchi
+Pincode: 834001
+Area: House No. 5, Sapphire Enclave, Doranda.
+
+29.
+-----------------------------------------
+Name: Anand Gupta
+Email: anand.gupta@gmail.com
+Mobile No: 9876543210
+Comment: "Product quality is top-notch."
+State: Assam
+District: Guwahati
+City: Guwahati
+Pin: 781001
+Area: Flat 101, Hill View Residency, GS Road.
+
+20.
+-----------------------------------------
+Name: Ishaan Mehta
+Email: ishaan.mehta@gmail.com
+Mobile No: 8765432109
+Comment: "Excellent product and prompt delivery."
+State: Punjab
+District: Amritsar
+City: Amritsar
+Pincode: 143001
+Area: House No. 11, Golden Avenue, Lawrence Road.
+
+
+
+
+
+
+
+

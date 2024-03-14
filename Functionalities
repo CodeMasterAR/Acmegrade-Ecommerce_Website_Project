@@ -1,0 +1,41 @@
+==============================================
+=================== VENDOR ===================
+==============================================
+
+-Authentication MVP
+-Upload Products - MVP
+-Update Product - MVP
+-Search Product
+-View - MVP
+-Edit - MVP
+-Delete - MVP
+-View Orders - MVP
+-Sell Product - MVP
+-Add Discount
+-Add Quantity
+-Add Vendor Detail
+-View Vendor Detail
+-Update Venor Detail
+-Add Category
+
+
+================================================
+=================== CUSTOMER ===================
+================================================
+
+-Authentication - MVP
+-View Product - MVP
+-Give Rating
+-Search Product 
+-Give Comment
+-Read Comment
+-View Product Category wise
+-Add to wishList - MVP
+-Delete Wishlist - MVP
+-View Wishlist - MVP
+-Add Cart - MVP
+-View Cart - MVP
+-Delete Cart - MVP
+-Buy Product Directly
+-Buy Products via cart
+-View Orders and Order History
