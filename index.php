@@ -1,5 +1,5 @@
 <?php
 
-header("location:Shared/login.html");
+header("location:Shared/app.php");
 
 ?>

@@ -405,8 +405,8 @@ include_once "authguard.php";
                             $disc = $orders['disc'];
                             $qty = $orders['hqty'];
                             $cusid = $orders['uid'];
-                            $orderdate = $date = date("d M Y", strtotime($orders['order_date']));
-                            $deliverydate = $date = date("d M Y", strtotime($orders['delivery_date']));
+                            $orderdate = date("d M Y", strtotime($orders['order_date']));
+                            $deliverydate = date("d M Y", strtotime($orders['delivery_date']));
                             $getAddress = mysqli_query($conn, "SELECT * FROM `address` WHERE `uid` = '$cusid'");
                             $address = mysqli_fetch_assoc($getAddress);
                             $area = $address['area'];
@@ -414,53 +414,52 @@ include_once "authguard.php";
                             $dist = $address['dist'];
                             $state = $address['state'];
                             $pincode = $address['pincode'];
-                            $address = $area . ", " . $city . ", " . $dist . ", " . $state . ", " . $pincode;
+                            $fullAddress = $area . ", " . $city . ", " . $dist . ", " . $state . ", " . $pincode;
 
-                            $getVen = mysqli_query($conn, "SELECT * FROM `vendor` JOIN `products` ON `products`.`vid` = `vendor`.`uid` Where `products`.`pid` = '$pid'");
+                            $getVen = mysqli_query($conn, "SELECT * FROM `vendor` JOIN `products` ON `products`.`vid` = `vendor`.`uid` WHERE `products`.`pid` = '$pid'");
                             $vendor = mysqli_fetch_assoc($getVen);
                             $brand = $vendor['brand'];
                             echo '
-                        <div class="product">
-                            <div class="product-img">
-                                <img src="' . $img . '" alt="">
+                            <div class="product">
+                                <div class="product-img">
+                                    <img src="' . $img . '" alt="">
+                                </div>
+                                <div class="product-info">
+                                    <div class="name">
+                                        <h4>' . $name . '</h4>
+                                    </div>
+                                    <div class="brand-name">
+                                        <h4>' . $brand . '</h4>
+                                    </div>
+                                    <div class="price">
+                                        <span>' . number_format($price - ($price * $disc) / 100, 0) . '/-</span>
+                                    </div>
+                                    <div class="discount">
+                                        <span class="disc">' . $disc . '% OFF</span>&nbsp;&nbsp;<span class="original-price">' . $price . '/-</span>
+                                    </div>
+                                    <div class="quantity">
+                                        <span>Quantity: </span> &nbsp;&nbsp;
+                                        <span>' . $qty . '</span>
+                                    </div>
+                                    <div class="address">
+                                        <span class="addr">Address</span>
+                                        <p>
+                                            ' . $fullAddress . '
+                                        </p>
+                                    </div>
+                                    <div class="date">
+                                        <span>Order Date: </span> &nbsp;&nbsp;
+                                        <span>' . $orderdate . '</span>
+                                    </div>
+                                    <div class="date">
+                                        <span>Delivery Date: </span> &nbsp;&nbsp;
+                                        <span>' . $deliverydate . '</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="product-info">
-                                <div class="name">
-                                    <h4>' . $name . '</h4>
-                                </div>
-                                <div class="brand-name">
-                                    <h4>' . $brand . '</h4>
-                                </div>
-                                <div class="price">
-                                    <span>' . number_format($price - ($price * $disc) / 100, 0) . '/-</span>
-                                </div>
-                                <div class="discount">
-                                    <span class="disc">' . $disc . '% OFF</span>&nbsp;&nbsp;<span class="original-price">' . $price . '/-</span>
-                                </div>
-                                <div class="quantity">
-                                    <span>Quantity: </span> &nbsp;&nbsp;
-                                    <span>' . $qty . '</span>
-                                </div>
-                                <div class="address">
-                                    <span class="addr">Address</span>
-                                    <p>
-                                        ' . $address . '
-                                    </p>
-                                </div>
-                                <div class="date">
-                                    <span>Order Date: </span> &nbsp;&nbsp;
-                                    <span>' . $orderdate . '</span>
-                                </div>
-                                <div class="date">
-                                    <span>Delivery Date: </span> &nbsp;&nbsp;
-                                    <span>' . $deliverydate . '</span>
-                                </div>
-                            </div>
-                        </div>
-                        ';
+                            ';
                         }
                     }
-
                     ?>
                 </div>
             </div>
