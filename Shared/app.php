@@ -251,16 +251,21 @@
 
     <script>
       window.addEventListener("DOMContentLoaded", (event) => {
-        <?php
-          session_start();
-          if (isset($_SESSION['toaster_message'])) {
-              $message = addslashes($_SESSION['toaster_message']);
-              $type = addslashes($_SESSION['toaster_type']);
-              echo "showToast('$message', '$type');";
-              unset($_SESSION['toaster_message']);
-              unset($_SESSION['toaster_type']);
+        const toasterMessage = localStorage.getItem('toaster_message');
+        const toasterType = localStorage.getItem('toaster_type');
+        if (toasterMessage && toasterType){
+          showToast(toasterMessage, toasterType);
+          switch (toasterMessage) {
+            case "Welcome to ShopGlamor!, have a good earning 😊":
+              setTimeout(() => { window.location.href = '../Vendor/home.php'; }, 1000);
+              break;
+            case "Welcome to ShopGlamor!, have a nice shopping 😊":
+              setTimeout(() => { window.location.href = '../Customer/home.php'; }, 1000);
+              break;
           }
-        ?>
+        }
+        localStorage.removeItem('toaster_message');
+        localStorage.removeItem('toaster_type');
       });
     </script>
   </body>

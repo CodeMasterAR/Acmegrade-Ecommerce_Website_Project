@@ -16,7 +16,12 @@ $matched_row_count = mysqli_num_rows($sql_cursor);
 if ($matched_row_count == 0) {
     $_SESSION['toaster_message'] = "Username or Password not matched!!";
     $_SESSION['toaster_type'] = "warning"; 
-    header("Location:../../app.php");
+    // Redirect to app.php after setting local storage
+    echo "<script>
+        localStorage.setItem('toaster_message', '" . $_SESSION['toaster_message'] . "');
+        localStorage.setItem('toaster_type', '" . $_SESSION['toaster_type'] . "');
+        window.location.href = '../../app.php';
+    </script>";
     exit();
 } else {
     $row = mysqli_fetch_assoc($sql_cursor);
@@ -29,18 +34,26 @@ if ($matched_row_count == 0) {
         $_SESSION['email'] = $email;
         $_SESSION['uid'] = $uid;
         $_SESSION['usertype'] = $usertype;
-        $_SESSION['toaster_message'] = "Welcome Vendor!";
+        $_SESSION['toaster_message'] = "Welcome to ShopGlamor!, have a nice earning 😊";
         $_SESSION['toaster_type'] = "success";
-        header("Location:../../../Vendor/home.php");
+        echo "<script>
+            localStorage.setItem('toaster_message', '" . $_SESSION['toaster_message'] . "');
+            localStorage.setItem('toaster_type', '" . $_SESSION['toaster_type'] . "');
+            window.location.href = '../../app.php';
+        </script>";
         exit();
     } else if ($usertype == "Customer") {
         $_SESSION['login_status'] = "true";
         $_SESSION['email'] = $email;
         $_SESSION['uid'] = $uid;
         $_SESSION['usertype'] = $usertype;
-        $_SESSION['toaster_message'] = "Welcome Customer!";
+        $_SESSION['toaster_message'] = "Welcome to ShopGlamor!, have a nice shopping 😊";
         $_SESSION['toaster_type'] = "success";
-        header("Location:../../../Customer/home.php");
+        echo "<script>
+            localStorage.setItem('toaster_message', '" . $_SESSION['toaster_message'] . "');
+            localStorage.setItem('toaster_type', '" . $_SESSION['toaster_type'] . "');
+            window.location.href = '../../app.php';
+        </script>";
         exit();
     }
 }

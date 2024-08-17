@@ -2,7 +2,6 @@ const loginForm = document.getElementById("login-form");
 const signupForm = document.getElementById("signup-form");
 const forgotPassForm = document.getElementById("forgot-pass-form");
 
-// Toggle between Signup and Login Forms
 document.getElementById("signup-link").addEventListener("click", (event) => {
   event.preventDefault();
   toggleForms(signupForm, loginForm);
@@ -17,7 +16,6 @@ document.getElementById("login-link").addEventListener("click", (event) => {
   }
 });
 
-// Toggle between Forgot Password and Login Forms
 document.getElementById("forgot-pass-link").addEventListener("click", (event) => {
   event.preventDefault();
   toggleForms(forgotPassForm, loginForm);
@@ -45,10 +43,42 @@ function generateRandom6DigitNumber() {
   return Math.floor(100000 + Math.random() * 900000);
 }
 
+let otpLink = document.getElementById("otp");
+let otpTimer;
+
+
+function startOtpTimer() {
+  let timeLeft = 15;
+
+  otpLink.textContent = `OTP invalid after ${timeLeft} seconds`;
+
+  otpTimer = setInterval(() => {
+    timeLeft -= 1;
+    otpLink.textContent = `OTP invalid after ${timeLeft} seconds`;
+
+    if (timeLeft <= 0) {
+      clearInterval(otpTimer);
+      otpLink.textContent = "Send OTP";
+      otpLink.disabled = false;
+    }
+  }, 1000);
+}
+
 function generateOtp() {
+  if (otpLink.disabled) return; // Prevent multiple clicks
+
   generatedOtp = generateRandom6DigitNumber().toString();
   alert(`Your OTP is: ${generatedOtp}`);
   document.querySelectorAll(".otp-box").forEach((box) => (box.value = ""));
+
+  otpLink.disabled = true; // Disable the OTP link during countdown
+
+  startOtpTimer(); // Start the countdown timer
+
+  setTimeout(() => {
+    generatedOtp = '';
+    showToast("Your OTP has expired. Please request a new one.");
+  }, 15000); // OTP expires after 15 seconds
 }
 
 function validateOtp(event) {
@@ -58,17 +88,14 @@ function validateOtp(event) {
     .map((box) => box.value)
     .join("");
 
-  if (enteredOtp === generatedOtp) {
+  if (enteredOtp !== "" && enteredOtp === generatedOtp) {
     const password = document.getElementById('forgotPasspassword').value;
     const confirmPassword = document.getElementById('forgotPassconfirmPassword').value;
     
     if (password !== confirmPassword) {
       showToast("Passwords don't match!", "warning");
     } else {
-      showToast("Password changed successfully!", "success");
-      setTimeout(() => {
-        document.getElementById("forgot-pass-form-content").submit();
-      }, 1000);
+      document.getElementById("forgot-pass-form-content").submit();
     }
   } else {
     showToast("Incorrect OTP. Please try again.", "warning");
@@ -77,8 +104,9 @@ function validateOtp(event) {
   document.querySelectorAll(".otp-box").forEach(box => box.value = '');
 }
 
+
 document.getElementById("otp").addEventListener("click", generateOtp);
-document.getElementById("validate-otp").addEventListener("click", validateOtp);
+document.getElementById("validate-otp").addEventListener("click", function(event) {validateOtp(event)});
 
 function passWordCheck(event) {
   event.preventDefault(); 
@@ -89,11 +117,8 @@ function passWordCheck(event) {
   if (password !== confirmPassword) {
     showToast("Passwords don't match!", "warning");
   } else {
-    showToast("You are successfully registered!", "success");
-    setTimeout(() => {
-      document.getElementById("signup-form-content").submit();
-    }, 1000);
+    document.getElementById("signup-form-content").submit();
   }
 }
 
-document.getElementById("submit-form").addEventListener("click", passWordCheck);
+document.getElementById("submit-form").addEventListener("click", function(event) {passWordCheck(event) });

@@ -1,9 +1,3 @@
-document
-  .getElementById("submit-form")
-  .addEventListener("click", function (event) {
-    passWordCheck(event);
-  });
-
 function showToast(message, type) {
   const toastContainer = document.getElementById("toast-container");
 
